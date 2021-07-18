@@ -15,10 +15,18 @@ const Card = (props) => {
 
     return (
         <>
+        <div>
         {cardInfo &&
             <img alt="card" src={cardInfo.cards[0].image}></img>
         }
+        {cardInfo &&
+        <p>Cards remaining: {cardInfo.remaining}</p>
+        }
+
+        </div>
+        <span>
         <button onClick={drawCard}>Draw</button>
+        </span>
         </>
     )
 };
