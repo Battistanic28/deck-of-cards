@@ -11,11 +11,14 @@ const Card = (props) => {
         let newCard = await axios.get(`${url}`);
         console.log("newCard", newCard.data)
         setCardInfo(newCard.data)
-    }
-
-    return (
-        <>
+        }
+        
+        return (
+            <>
         <div>
+        {cardInfo && cardInfo.remaining === 0 &&
+            <p>End of deck</p>
+        }
         {cardInfo &&
             <img alt="card" src={cardInfo.cards[0].image}></img>
         }
